@@ -1,20 +1,49 @@
 import React, { FC } from 'react'
+import { NavLink } from 'react-router-dom'
+import IconElement from '../iconElement/IconElement'
+import { Call, Notification } from 'iconsax-react'
+import { ReactComponent as Chat } from '../../assests/icons/chat.svg'
+import { ReactComponent as TeamsIcon } from '../../assests/icons/Teams-gray.svg'
+import { ReactComponent as Calendar } from '../../assests/icons/Calendar.svg'
+import { ReactComponent as Files } from '../../assests/icons/Files.svg'
+import { ReactComponent as Van } from '../../assests/icons/Van.svg'
+import { ReactComponent as Apps } from '../../assests/icons/Apps.svg'
+import { ReactComponent as More } from '../../assests/icons/More.svg'
 
-const Navbar:FC = () => {
+const navItems = [
+  { name: 'Activity', path: '/activity', icon: <IconElement icon={Notification} /> },
+  { name: 'Chat', path: '/chat', icon: <IconElement icon={Chat} /> },
+  { name: 'Teams', path: '/teams', icon: <IconElement icon={TeamsIcon} /> },
+  { name: 'Calendar', path: '/calendar', icon: <IconElement icon={Calendar} /> },
+  { name: 'Calls', path: '/calls', icon: <IconElement icon={Call} /> },
+  { name: 'Files', path: '/files', icon: <IconElement icon={Files} /> },
+  { name: 'Van Arsdel', path: '/van-arsdel', icon: <IconElement icon={Van} /> },
+  { name: 'More', path: '/more', icon: <IconElement icon={More} /> },
+  { name: 'Apps', path: '/apps', icon: <IconElement icon={Apps} /> },
+]
+
+const Navbar: FC = () => {
   return (
-    <div className="bg-custom-gradient-navbar-header w-full sm:w-16 h-12 sm:h-screen flex sm:flex-col fixed bottom-0 sm:static">
-    <div className="flex sm:flex-col justify-around sm:justify-start items-center sm:items-start p-4">
-      <a href="#" className="py-2 sm:py-4 hover:text-gray-300 text-xs">Activity</a>
-      <a href="#" className="py-2 sm:py-4 hover:text-gray-300 text-xs">Chat</a>
-      <a href="#" className="py-2 sm:py-4 hover:text-gray-300 text-xs">Teams</a>
-      <a href="#" className="py-2 sm:py-4 hover:text-gray-300 text-xs">Calendar</a>
-      <a href="#" className="py-2 sm:py-4 hover:text-gray-300 text-xs">Calls</a>
-      <a href="#" className="py-2 sm:py-4 hover:text-gray-300 text-xs">Files</a>
-      <a href="#" className="py-2 sm:py-4 hover:text-gray-300 text-xs">Van Arsdel</a>
-      <a href="#" className="py-2 sm:py-4 hover:text-gray-300 text-xs">...</a>
-      <a href="#" className="py-2 sm:py-4 hover:text-gray-300 text-xs">Apps</a>
+    <div className='bg-custom-gradient-navbar-header items-center justify-center  sm:w-20 h-12 sm:h-screen flex sm:flex-col fixed bottom-0 sm:static'>
+      <div className='flex items-center  sm:flex-col sm:justify-center  sm:items-center p-4'>
+        {navItems.map(({ name, path, icon }) => (
+          <NavLink
+            key={path}
+            to={path}
+            className={({ isActive }) =>
+              `
+            py-2 relative sm:py-4 text-[10px]
+             before:${isActive ? 'text-blue-500 border-l-2 absolute right-0 px-1 border-[#5B5FC7]' : 'hover:text-gray-300'}`
+            }
+          >
+            <div className='flex items-center gap-x-2 flex-col '>
+              <span className='text-nowrap text-[#616161]'>{name}</span>
+              <span> {icon}</span>
+            </div>
+          </NavLink>
+        ))}
+      </div>
     </div>
-  </div>
   )
 }
 
