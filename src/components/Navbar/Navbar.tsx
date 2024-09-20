@@ -24,27 +24,26 @@ const navItems = [
 
 const Navbar: FC = () => {
   return (
-    <div className='bg-custom-gradient-navbar-header items-center justify-center  sm:w-20 h-12 sm:h-screen flex sm:flex-col fixed bottom-0 sm:static'>
-      <div className='flex items-center  sm:flex-col sm:justify-center  sm:items-center p-4'>
+    <div className='bg-custom-gradient-navbar-header w-20 h-full flex flex-col'>
+      <div className='flex flex-col items-center p-4'>
         {navItems.map(({ name, path, icon }) => (
           <NavLink
             key={path}
             to={path}
-            className={({ isActive }) =>
-              `
-            py-2 relative sm:py-4 text-[10px]
-             before:${isActive ? 'text-blue-500 border-l-2 absolute right-0 px-1 border-[#5B5FC7]' : 'hover:text-gray-300'}`
-            }
+            className={({ isActive }) => `
+              py-2 text-[10px] text-nowrap
+              ${isActive ? ' border-l-2 border-[#5B5FC7]' : 'hover:text-gray-300'}
+            `}
           >
-            <div className='flex items-center gap-x-2 flex-col '>
-              <span className='text-nowrap text-[#616161]'>{name}</span>
-              <span> {icon}</span>
+            <div className='flex flex-col items-center'>
+              <span className='text-[#616161]'>{name}</span>
+              <span>{icon}</span>
             </div>
           </NavLink>
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Navbar
