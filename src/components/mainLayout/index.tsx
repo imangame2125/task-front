@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from 'react'
-import MobileMainLayout from './mobileMainLayout'
 import DesktopMainLayout from './desktopMainLayout'
 import useDevice from '@/hooks/useDevice'
+import MobileMainLayout from './mobileMainLayout'
 
 const MainLayout: FC<PropsWithChildren> = ({ children }) => {
   const { isTabletOrMobile } = useDevice()

@@ -1,10 +1,14 @@
 import IconElement from '@/components/iconElement/IconElement'
 import { ArrowDown2, HambergerMenu } from 'iconsax-react'
 import { ReactComponent as SearchIcon } from '@/assests/icons/search-icon.svg'
+import useDevice from '@/hooks/useDevice'
 
 const Filter = () => {
+  const { isTabletOrMobile } = useDevice()
   return (
-    <div className='w-full h-20 flex px-5 justify-center border-t border-b items-center'>
+    <div
+      className={`w-full h-20 flex px-5 justify-center border-t border-b items-center ${isTabletOrMobile ? 'hidden' : ''}`}
+    >
       <div className='w-3/4 flex items-center gap-x-4'>
         <div className='flex items-center gap-x-2'>
           <IconElement className='text-[#424242] w-8 h-8' icon={HambergerMenu} />

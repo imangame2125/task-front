@@ -17,7 +17,7 @@ interface CardProps {
 
 const Card: FC<CardProps> = ({ title, description, timePeriods, imageUrl, label1, label2 }) => {
   return (
-    <div className='mx-4 cursor-pointer bg-white border border-gray-200 rounded-lg shadow-md'>
+    <div className='flex-1 cursor-pointer bg-white border border-gray-200 rounded-lg shadow-md'>
       <div className='p-4'>
         <div className='flex justify-between items-center'>
           <p className='text-sm font-bold text-[#242424]'>{title}</p>
