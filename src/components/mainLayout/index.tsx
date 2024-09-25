@@ -1,16 +1,15 @@
 import { FC, PropsWithChildren } from 'react'
-import Header from '../header/Header'
-import Navbar from '../navbar/Navbar'
+import MobileMainLayout from './mobileMainLayout'
+import DesktopMainLayout from './desktopMainLayout'
+import useDevice from '@/hooks/useDevice'
 
 const MainLayout: FC<PropsWithChildren> = ({ children }) => {
+  const { isTabletOrMobile } = useDevice()
   return (
-    <div className='flex flex-col h-screen'>
-      <Header />
-      <div className='flex flex-1'>
-        <Navbar />
-        <main className='w-full'>{children}</main>
-      </div>
-    </div>
+    <>
+      {isTabletOrMobile && <MobileMainLayout>{children}</MobileMainLayout>}
+      {!isTabletOrMobile && <DesktopMainLayout>{children}</DesktopMainLayout>}
+    </>
   )
 }
 
