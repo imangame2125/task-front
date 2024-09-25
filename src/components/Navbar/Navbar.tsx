@@ -9,6 +9,7 @@ import { ReactComponent as Files } from '../../assests/icons/Files.svg'
 import { ReactComponent as Van } from '../../assests/icons/Van.svg'
 import { ReactComponent as Apps } from '../../assests/icons/Apps.svg'
 import { ReactComponent as More } from '../../assests/icons/More.svg'
+import useDevice from '@/hooks/useDevice'
 
 const navItems = [
   { name: 'Activity', path: '/activity', icon: <IconElement icon={Notification} /> },
@@ -23,6 +24,7 @@ const navItems = [
 ]
 
 const Navbar: FC = () => {
+  const { isTabletOrMobile } = useDevice()
   return (
     <div className='bg-custom-gradient-navbar-header w-20 h-full flex flex-col'>
       <div className='flex flex-col items-center'>

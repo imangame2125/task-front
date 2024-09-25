@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, useState } from 'react'
+import { FC, PropsWithChildren } from 'react'
 import IconElement from '../iconElement/IconElement'
 import { ReactComponent as Wifi } from '../../assests/mobile/Wifi.svg'
 import { ReactComponent as Cellular } from '../../assests/mobile/Cellular.svg'
@@ -8,7 +8,6 @@ import { ReactComponent as Bot } from '../../assests/mobile/Bot.svg'
 import { More } from 'iconsax-react'
 
 const MobileMainLayout: FC<PropsWithChildren> = ({ children }) => {
-  const [isActive, setIsActive] = useState(false)
   return (
     <div className='w-full flex mx-auto mt-4 flex-wrap'>
       <header className='flex justify-between w-full mx-4'>
