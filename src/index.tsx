@@ -7,7 +7,6 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
   <Router>
-    <App />
     <Routes>
       <Route path="/" element={<App />} />
     </Routes>
