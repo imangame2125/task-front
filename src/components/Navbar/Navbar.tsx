@@ -25,19 +25,19 @@ const navItems = [
 const Navbar: FC = () => {
   return (
     <div className='bg-custom-gradient-navbar-header w-20 h-full flex flex-col'>
-      <div className='flex flex-col items-center p-4'>
+      <div className='flex flex-col items-center'>
         {navItems.map(({ name, path, icon }) => (
           <NavLink
             key={path}
             to={path}
             className={({ isActive }) => `
-              py-2 text-[10px] text-nowrap
-              ${isActive ? ' border-l-2 border-[#5B5FC7]' : 'hover:text-gray-300'}
+              mt-3 text-[10px] text-nowrap
+              ${isActive ? ' border-l-2 border-[#5B5FC7] ' : 'hover:text-gray-300'}
             `}
           >
-            <div className='flex flex-col items-center'>
-              <span className='text-[#616161]'>{name}</span>
+            <div className='flex flex-col items-center gap-2'>
               <span>{icon}</span>
+              <span className='text-[#673333]'>{name}</span>
             </div>
           </NavLink>
         ))}

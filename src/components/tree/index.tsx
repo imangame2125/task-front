@@ -17,15 +17,15 @@ interface TreeProps {
 
 const Tree: FC<TreeProps> = ({ expandedKeys, data, onNodeSelect }) => {
   return (
-    <ul className='pl-3'>
+    <ul className='ml-2 mt-5'>
       {data.map((node) => (
-        <li key={node.key}>
-          <div className='flex items-center gap-x-2'>
+        <li className='mt-2 pl-3' key={node.key}>
+          <div className='flex items-center gap-x-2 '>
             <Anchor
               onClick={() => onNodeSelect?.(node.key)}
               exapnded={expandedKeys?.some((exKey) => exKey === node.key)}
             />
-            {node.title}
+            <p className='text-[#424242] text-sm font-normal'> {node.title}</p>
           </div>
           {expandedKeys?.some((exKey) => exKey === node.key) && node.children && (
             <Tree data={node.children} expandedKeys={expandedKeys} onNodeSelect={onNodeSelect} />

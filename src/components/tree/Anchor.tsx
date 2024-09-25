@@ -10,7 +10,7 @@ const Anchor = ({ exapnded, ...rest }: AnchorProps) => {
   return (
     <IconElement
       icon={exapnded ? ArrowDown2 : ArrowRight2}
-      className='text-[#424242] cursor-pointer'
+      className='text-[#424242] cursor-pointer w-3'
       {...rest}
     />
   )
