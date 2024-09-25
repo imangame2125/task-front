@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from 'react'
 import Header from '../header/Header'
-import Navbar from '../Navbar/Navbar'
+import Navbar from '../navbar/Navbar'
 
 const MainLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
@@ -8,7 +8,7 @@ const MainLayout: FC<PropsWithChildren> = ({ children }) => {
       <Header />
       <div className='flex flex-1'>
         <Navbar />
-        <main className='w-full p-2'>{children}</main>
+        <main className='w-full'>{children}</main>
       </div>
     </div>
   )

@@ -15,7 +15,7 @@ const navLinks = [
 const Main: FC = () => {
   return (
     <main className='w-full'>
-      <div className='flex items-center justify-between border-b w-full px-4  my-4'>
+      <div className='flex items-center justify-between  w-full px-4  my-4'>
         <div className='flex items-center gap-x-4'>
           <div className='flex h-10 gap-x-2'>
             <IconElement icon={VanIConBlack} />

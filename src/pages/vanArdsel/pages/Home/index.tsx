@@ -56,7 +56,7 @@ const Home = () => {
   return (
     <>
       <Filter />
-      <div className='w-full'>
+      <div className='w-full '>
         <Tree data={treeDataMock} expandedKeys={expandedKeys} onNodeSelect={handleNodeSelect} />
       </div>
     </>
