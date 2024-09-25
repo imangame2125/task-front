@@ -1,28 +1,29 @@
-import { Route, Routes } from 'react-router-dom';
-import Header from './components/header/Header';
-import Main from './components/main/Main';
-import Home from './pages/Home/Home';
-import TimeLine from './pages/TimeLine/TimeLine';
-import AssingToMe from './pages/AssignToMe/AssingToMe';
-import Chat from './pages/Chat/Chat';
-import Navbar from './components/navbar/Navbar';
+import { Route, Routes } from 'react-router-dom'
+import VanArdselPage from './pages/vanArdsel'
+import Chat from './pages/chat'
+import ActivityPage from './pages/activity'
+import TeamsPage from './pages/teams'
+import CalendarPage from './pages/calendar'
+import CallsPage from './pages/calls'
+import FilesPage from './pages/files'
+import AppsPage from './pages/apps'
+import MainLayout from './components/mainLayout'
 
 function App() {
   return (
-    <div className="flex flex-col h-screen">
-      <Header />
-      <div className="flex flex-1">
-        <Navbar />
-        <Main />
-      </div>
+    <MainLayout>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/timeline" element={<TimeLine />} />
-        <Route path="/assigned" element={<AssingToMe />} />
-        <Route path="/chat" element={<Chat />} />
+        <Route path='/activity' element={<ActivityPage />} />
+        <Route path='/chat' element={<Chat />} />
+        <Route path='/teams' element={<TeamsPage />} />
+        <Route path='/calendar' element={<CalendarPage />} />
+        <Route path='/calls' element={<CallsPage />} />
+        <Route path='/files' element={<FilesPage />} />
+        <Route path='/van-ardsel/*' element={<VanArdselPage />} />
+        <Route path='/apps' element={<AppsPage />} />
       </Routes>
-    </div>
-  );
+    </MainLayout>
+  )
 }
 
-export default App;
+export default App

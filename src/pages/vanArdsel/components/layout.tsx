@@ -1,20 +1,20 @@
-import { FC } from 'react'
+import { FC, PropsWithChildren } from 'react'
+import IconElement from '@/components/iconElement/IconElement'
 import { NavLink } from 'react-router-dom'
-import IconElement from '../iconElement/IconElement'
+import { ReactComponent as VanIConBlack } from '../../../assests/icons/VanIconBlack.svg'
+import { ReactComponent as Maxi } from '../../../assests/icons/maxiBig.svg'
 import { More } from 'iconsax-react'
-import { ReactComponent as VanIConBlack } from '../../assests/icons/VanIconBlack.svg'
-import { ReactComponent as Maxi } from '../../assests/icons/maxiBig.svg'
 
 const navLinks = [
-  { name: 'Home', path: '/' },
-  { name: 'Timeline', path: '/timeline' },
-  { name: 'Assigned to Me', path: '/assigned' },
-  { name: 'Chat', path: '/chat' },
+  { name: 'Home', path: '/van-ardsel/home' },
+  { name: 'Timeline', path: '/van-ardsel/timeline' },
+  { name: 'Assigned to Me', path: '/van-ardsel/assigned-to-me' },
+  { name: 'Chat', path: '/van-ardsel/chat' },
 ]
 
-const Main: FC = () => {
+const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <main className='w-full'>
+    <>
       <div className='flex items-center justify-between border-b w-full px-4  my-4'>
         <div className='flex items-center gap-x-4'>
           <div className='flex h-10 gap-x-2'>
@@ -42,8 +42,9 @@ const Main: FC = () => {
           <IconElement icon={More} className='text-[#424242]' />
         </div>
       </div>
-    </main>
+      <div>{children}</div>
+    </>
   )
 }
 
-export default Main
+export default Layout

@@ -17,7 +17,7 @@ const navItems = [
   { name: 'Calendar', path: '/calendar', icon: <IconElement icon={Calendar} /> },
   { name: 'Calls', path: '/calls', icon: <IconElement icon={Call} /> },
   { name: 'Files', path: '/files', icon: <IconElement icon={Files} /> },
-  { name: 'Van Arsdel', path: '/van-arsdel', icon: <IconElement icon={Van} /> },
+  { name: 'Van Arsdel', path: '/van-ardsel', icon: <IconElement icon={Van} /> },
   { name: 'More', path: '/more', icon: <IconElement icon={More} /> },
   { name: 'Apps', path: '/apps', icon: <IconElement icon={Apps} /> },
 ]
@@ -43,7 +43,7 @@ const Navbar: FC = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default Navbar
